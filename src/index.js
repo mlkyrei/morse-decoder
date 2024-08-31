@@ -40,11 +40,10 @@ const MORSE_TABLE = {
 function decode(expr) {
     let results = '';
     for (let i = 0; i < expr.length; i+=10){
-        let chunk = expr.slice(i, i+10)
-        if (chunk === '**********'){return ' ';}
-        else{ let morseCode = chunk.replace(/10/g, '.').replace(/11/g, '-').replace(/0/g, '');
-        }
-        results += MORSE_TABLE[morseCODE];
+        let chunk = expr.slice(i, i+10);
+        if (chunk === '**********'){results += ' ';}
+        else {let morseCode = chunk.replace(/10/g, '.').replace(/11/g, '-').replace(/0/g, '');
+        results += MORSE_TABLE[morseCODE];}
     }
     return results;
 }
